@@ -16,7 +16,7 @@ const ResortsDetail = () => {
 
   useEffect(() => {
     const getResort = async () => {
-      await axios.get(`http://54.193.32.199:3001/api/resort/${id}`)
+      await axios.get(`http://54.183.167.79:3001/api/resort/${id}`)
         .then(res => {
           console.log(res.data.resort)
           setResort(res.data.resort)
@@ -44,7 +44,7 @@ const ResortsDetail = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(plan)
-    await axios.post('http://54.193.32.199:3001/api/plan', plan, { headers: { Authorization: `Bearer ${localUser.token}` } })
+    await axios.post('http://54.183.167.79:3001/api/plan', plan, { headers: { Authorization: `Bearer ${localUser.token}` } })
       .then(res => {
         // console.log(res)
         setconfirm(`You have successfully created you plan to ${resort.resortName}!`)
